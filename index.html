@@ -61,22 +61,22 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            display: flex;
+            align-items: center;
         }
 
         nav.scrolled .nav-links a {
             color: white;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #4ade80;
-            transition: width 0.3s ease;
+       
+
+        .nav-links a:hover::before {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
         }
+
+       
 
         .nav-links a:hover::after {
             width: 100%;
@@ -86,7 +86,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('image/front.png') center/cover;
+                url(image/front.png) center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -153,6 +153,27 @@
             content: '↓';
             font-size: 2rem;
             color: white;
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #2e7d32;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
         }
 
         /* About Section */
@@ -317,45 +338,6 @@
             color: #555;
         }
 
-        /* Gallery Section */
-        .gallery {
-            padding: 6rem 5%;
-            background: #f1f8e9;
-        }
-
-        .gallery h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2e7d32;
-        }
-
-        .gallery-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            height: 250px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         /* Visit Section */
         .visit {
             padding: 6rem 5%;
@@ -409,7 +391,7 @@
         }
 
         .travel-tips li:before {
-            content: "✓";
+            content: "•";
             position: absolute;
             left: 0;
             color: #4caf50;
@@ -502,6 +484,39 @@
             font-weight: bold;
         }
 
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            background: #e8f5e9;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2e7d32;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            display: inline-block;
+            text-align: left;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
         /* Footer */
         footer {
             background: #1b5e20;
@@ -588,6 +603,13 @@
                 font-size: 0.9rem;
             }
 
+            .nav-links a::before {
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 0.7rem;
+            }
+
             .map-container {
                 height: 300px;
             }
@@ -600,11 +622,12 @@
         <div class="logo">PITO GALERA</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#visit">Visit</a></li>
-            <li><a href="#heritage">Heritage</a></li>
+            <li><a href="#about" >About</a></li>
+            <li><a href="#features" >Features</a></li>
+            <li><a href="#visit" >Visit</a></li>
+
+            <li><a href="#heritage" >Heritage</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -623,7 +646,10 @@
     <section id="about" class="about">
         <div class="about-container">
             <div class="about-content">
-                <h2>About Pito Galera</h2>
+                <div class="section-header">
+                 
+                    <h2>About Pito Galera</h2>
+                </div>
                 <p>Pito Galera is a coastal destination located in Barangay Pinamucan, Batangas City. Surrounded by clear waters and natural scenery, it provides a relaxing atmosphere ideal for visitors seeking tranquility close to the city.</p>
                 
                 <p>The location, named "Pito Galera," was discovered by locals who noticed its crystal-clear waters. They coined the name to resemble Puerto Galera because its pristine condition reminded them of the famous tourist spot's clean seas.</p>
@@ -631,18 +657,21 @@
                 <p>Pito Galera offers various leisure experiences that highlight its serene environment and cultural identity. Visitors can enjoy peaceful beach walks, local fishing, and stunning sunsets over Batangas Bay. Its simplicity and calmness make it ideal for day trips, nature photography, and eco-friendly recreation.</p>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Pito Galera coastline">
+                <img src= "image/about.png" alt="Pito Galera coastline">
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="features">
-        <h2>Unique Features of Pito Galera</h2>
+        <div class="section-header" style="justify-content: center;">
+         
+            <h2>Unique Features of Pito Galera</h2>
+        </div>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-image">
-                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Crystal clear waters">
+                    <img src="image/front.png" alt="Crystal clear waters">
                 </div>
                 <div class="feature-content">
                     <h3>Crystal Clear Waters</h3>
@@ -651,7 +680,7 @@
             </div>
             <div class="feature-card">
                 <div class="feature-image">
-                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Natural rock formations">
+                    <img src="image/natural.png" alt="Natural rock formations">
                 </div>
                 <div class="feature-content">
                     <h3>Natural Rock Formations</h3>
@@ -660,7 +689,7 @@
             </div>
             <div class="feature-card">
                 <div class="feature-image">
-                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Panoramic views">
+                    <img src="image/about.png" alt="Panoramic views">
                 </div>
                 <div class="feature-content">
                     <h3>Panoramic Views</h3>
@@ -670,40 +699,14 @@
         </div>
     </section>
 
-    <!-- Experiences Section -->
-    <section id="experiences" class="experiences">
-        <h2>Experience Pito Galera</h2>
-        <p>From tranquil beach activities to stunning natural sights, Pito Galera offers a variety of experiences for every type of traveler.</p>
-        
-        <div class="experience-grid">
-            <div class="experience-card">
-                <div class="experience-icon">🏖️</div>
-                <h3>Beach Relaxation</h3>
-                <p>Unwind on pristine shores with calm waters perfect for swimming and sunbathing</p>
-            </div>
-            <div class="experience-card">
-                <div class="experience-icon">📸</div>
-                <h3>Nature Photography</h3>
-                <p>Capture stunning coastal landscapes and breathtaking sunsets</p>
-            </div>
-            <div class="experience-card">
-                <div class="experience-icon">🎣</div>
-                <h3>Local Fishing</h3>
-                <p>Experience traditional fishing methods with local fishermen</p>
-            </div>
-            <div class="experience-card">
-                <div class="experience-icon">🌅</div>
-                <h3>Sunset Viewing</h3>
-                <p>Witness spectacular sunsets over Batangas Bay</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Visit Section -->
     <section id="visit" class="visit">
         <div class="visit-container">
             <div>
-                <h2>Plan Your Visit Today</h2>
+                <div class="section-header">
+                  
+                    <h2>Plan Your Visit Today</h2>
+                </div>
                 <p><strong>How to Get There</strong></p>
                 
                 <p><strong>Private Vehicle:</strong><br>
@@ -725,8 +728,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.6942383381036!2d121.043696!3d13.718988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzA4LjQiTiAxMjHCsDAyJzM3LjMiRQ!5e0!3m2!1sen!2sph!4v1640000000000!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+            <div>
+                <div class="section-header">
+                
+                    <h2>Location Map</h2>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.6942383381036!2d121.043696!3d13.718988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd03669e2826eb%3A0x9228a34b6327823!2sVicky&#39;s%20Store!5e0!3m2!1sen!2sph!4v1640000000000!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -734,7 +743,10 @@
     <!-- Heritage Section -->
     <section id="heritage" class="heritage">
         <div class="heritage-container">
-            <h2>A Living Heritage</h2>
+            <div class="section-header" style="justify-content: center;">
+            
+                <h2>A Living Heritage</h2>
+            </div>
             <p>Pito Galera is not just a place to visit—it's a reflection of a community that thrives by the sea, where unity, resilience, and care for the environment continue to shape its identity.</p>
             
             <div class="heritage-grid">
@@ -759,6 +771,21 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="section-header" style="justify-content: center;">
+         
+                <h2>Contact & Visitor Information</h2>
+            </div>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> +43 7245 435</p>
+                <p><strong>Email:</strong> ptcao@batangas.gov.ph</p>
+                <p><strong>Address:</strong> Barangay Pinamucan, Batangas City</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -774,12 +801,13 @@
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#features">Features</a>
-                <a href="#experiences">Experiences</a>
-                <a href="#visit">Visit</a>
-                <a href="#heritage">Heritage</a>
+                <a href="#home">1. Home</a>
+                <a href="#about">2. About</a>
+                <a href="#features">3. Features</a>
+                <a href="#visit">4. Visit</a>
+                <a href="#map">5. Map</a>
+                <a href="#heritage">6. Heritage</a>
+                <a href="#contact">7. Contact</a>
             </div>
         </div>
         <div class="copyright">
