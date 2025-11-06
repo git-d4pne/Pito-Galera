@@ -86,7 +86,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover;
+                url('image/front.png') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -196,10 +196,67 @@
             object-fit: cover;
         }
 
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            background: #f1f8e9;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2e7d32;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-content {
+            padding: 1.5rem;
+        }
+
+        .feature-content h3 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-content p {
+            color: #555;
+        }
+
         /* Experiences Section */
         .experiences {
             padding: 6rem 5%;
-            background: #f1f8e9;
+            background: #e8f5e9;
         }
 
         .experiences h2 {
@@ -263,7 +320,7 @@
         /* Gallery Section */
         .gallery {
             padding: 6rem 5%;
-            background: #e8f5e9;
+            background: #f1f8e9;
         }
 
         .gallery h2 {
@@ -299,79 +356,6 @@
             object-fit: cover;
         }
 
-        /* Accommodations Section */
-        .accommodations {
-            padding: 6rem 5%;
-            background: #f1f8e9;
-        }
-
-        .accommodations-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .accommodations h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #2e7d32;
-            text-align: center;
-        }
-
-        .accommodations p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .accommodation-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .accommodation-card {
-            background: #e8f5e9;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .accommodation-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .accommodation-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .accommodation-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .accommodation-content {
-            padding: 1.5rem;
-        }
-
-        .accommodation-content h3 {
-            color: #2e7d32;
-            margin-bottom: 0.5rem;
-        }
-
-        .accommodation-content p {
-            text-align: left;
-            margin-bottom: 1rem;
-        }
-
         /* Visit Section */
         .visit {
             padding: 6rem 5%;
@@ -400,16 +384,122 @@
             margin-bottom: 1.5rem;
         }
 
-        .map-placeholder {
-            height: 400px;
-            background: linear-gradient(135deg, #a5d6a7, #81c784);
+        .travel-tips {
+            background: white;
+            padding: 2rem;
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-top: 2rem;
+        }
+
+        .travel-tips h3 {
             color: #2e7d32;
+            margin-bottom: 1rem;
+        }
+
+        .travel-tips ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .travel-tips li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .travel-tips li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Heritage Section */
+        .heritage {
+            padding: 6rem 5%;
+            background: #f1f8e9;
+        }
+
+        .heritage-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .heritage h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2e7d32;
+        }
+
+        .heritage p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .heritage-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .heritage-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .heritage-card h3 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .heritage-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .heritage-card li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .heritage-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
         }
 
         /* Footer */
@@ -498,7 +588,7 @@
                 font-size: 0.9rem;
             }
 
-            .map-placeholder {
+            .map-container {
                 height: 300px;
             }
         }
@@ -511,9 +601,10 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
             <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#visit">Visit</a></li>
+            <li><a href="#heritage">Heritage</a></li>
         </ul>
     </nav>
 
@@ -522,7 +613,7 @@
         <div class="hero-content">
             <h1>PITO GALERA</h1>
             <p class="subtitle">Batangas City's Hidden Coastal Gem</p>
-            <p>Discover the pristine beauty of Pito Galera, a tranquil coastal paradise in Barangay Pinamucan, Batangas City. With its crystal-clear waters and breathtaking scenery, it's the perfect escape for those seeking peace and natural beauty.</p>
+            <p>Discover Pito Galera: Batangas City's Hidden Coastal Gem. Located in Barangay Pinamucan, Batangas City, Pito Galera is a calm and scenic coastal area that offers breathtaking views and a peaceful atmosphere—perfect for rest and recreation.</p>
             <a href="#about" class="cta-button">Explore More →</a>
         </div>
         <div class="scroll-indicator"></div>
@@ -533,14 +624,48 @@
         <div class="about-container">
             <div class="about-content">
                 <h2>About Pito Galera</h2>
-                <p>Pito Galera is a stunning coastal destination located in Barangay Pinamucan, Batangas City. Named after the famous Puerto Galera for its similarly pristine waters, this hidden gem offers visitors a peaceful retreat surrounded by natural beauty.</p>
+                <p>Pito Galera is a coastal destination located in Barangay Pinamucan, Batangas City. Surrounded by clear waters and natural scenery, it provides a relaxing atmosphere ideal for visitors seeking tranquility close to the city.</p>
                 
-                <p>With its calm waters and scenic views, Pito Galera is ideal for swimming, photography, or simply relaxing by the sea. The area maintains its natural charm while being easily accessible from Batangas City proper.</p>
+                <p>The location, named "Pito Galera," was discovered by locals who noticed its crystal-clear waters. They coined the name to resemble Puerto Galera because its pristine condition reminded them of the famous tourist spot's clean seas.</p>
                 
-                <p>Whether you're looking for a day trip or a weekend getaway, Pito Galera provides the perfect setting to unwind and reconnect with nature away from the crowds of more commercial destinations.</p>
+                <p>Pito Galera offers various leisure experiences that highlight its serene environment and cultural identity. Visitors can enjoy peaceful beach walks, local fishing, and stunning sunsets over Batangas Bay. Its simplicity and calmness make it ideal for day trips, nature photography, and eco-friendly recreation.</p>
             </div>
             <div class="about-image">
                 <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Pito Galera coastline">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Unique Features of Pito Galera</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-image">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Crystal clear waters">
+                </div>
+                <div class="feature-content">
+                    <h3>Crystal Clear Waters</h3>
+                    <p>Named after Puerto Galera for its similarly pristine waters that sparkle under the sun.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-image">
+                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Natural rock formations">
+                </div>
+                <div class="feature-content">
+                    <h3>Natural Rock Formations</h3>
+                    <p>Unique coastal rock formations that create picturesque scenery perfect for photography.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-image">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Panoramic views">
+                </div>
+                <div class="feature-content">
+                    <h3>Panoramic Views</h3>
+                    <p>Breathtaking views of Batangas Bay with spectacular sunrise and sunset vantage points.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -562,9 +687,9 @@
                 <p>Capture stunning coastal landscapes and breathtaking sunsets</p>
             </div>
             <div class="experience-card">
-                <div class="experience-icon">🚤</div>
-                <h3>Coastal Exploration</h3>
-                <p>Discover hidden coves and scenic viewpoints along the coastline</p>
+                <div class="experience-icon">🎣</div>
+                <h3>Local Fishing</h3>
+                <p>Experience traditional fishing methods with local fishermen</p>
             </div>
             <div class="experience-card">
                 <div class="experience-icon">🌅</div>
@@ -574,87 +699,62 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Coastal view">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Clear waters">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Natural scenery">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Rock formations">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Sunset view">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Beach area">
-            </div>
-        </div>
-    </section>
-
-    <!-- Accommodations Section -->
-    <section class="accommodations">
-        <div class="accommodations-container">
-            <h2>Plan Your Visit</h2>
-            <p>While Pito Galera maintains its natural charm with limited commercial development, visitors can enjoy day trips with various options for a memorable experience.</p>
-            
-            <div class="accommodation-options">
-                <div class="accommodation-card">
-                    <div class="accommodation-image">
-                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Day trip">
-                    </div>
-                    <div class="accommodation-content">
-                        <h3>Day Trips</h3>
-                        <p>Perfect for a quick escape, bring your own food and enjoy a picnic by the sea with family and friends.</p>
-                    </div>
-                </div>
-                <div class="accommodation-card">
-                    <div class="accommodation-image">
-                        <img src="https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Local stays">
-                    </div>
-                    <div class="accommodation-content">
-                        <h3>Local Stays</h3>
-                        <p>Connect with local residents who may offer homestay options for an authentic experience.</p>
-                    </div>
-                </div>
-                <div class="accommodation-card">
-                    <div class="accommodation-image">
-                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Nearby hotels">
-                    </div>
-                    <div class="accommodation-content">
-                        <h3>Nearby Accommodations</h3>
-                        <p>Stay in Batangas City proper and take a short trip to Pito Galera for your beach activities.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Visit Section -->
     <section id="visit" class="visit">
         <div class="visit-container">
             <div>
-                <h2>How to Get to Pito Galera</h2>
-                <p>Pito Galera is conveniently located in Barangay Pinamucan Proper, just 20-25 minutes from Batangas City proper.</p>
+                <h2>Plan Your Visit Today</h2>
+                <p><strong>How to Get There</strong></p>
                 
-                <p><strong>By Public Transportation:</strong><br>
-                From Batangas Grand Terminal, take a jeepney or tricycle bound for Pinamucan. Ask the driver to drop you off at Pito Galera.</p>
+                <p><strong>Private Vehicle:</strong><br>
+                From SM Batangas City, drive straight along the main road heading to Barangay Pinamucan Proper, Batangas City. Continue following the route until you reach the coastal area known as Pito Galera. The travel time is about 20–25 minutes, depending on traffic.</p>
                 
-                <p><strong>By Private Vehicle:</strong><br>
-                Take the Diversion Road and follow signs leading to Pinamucan. The coastal area is easily accessible with ample parking space available.</p>
+                <p><strong>Public Vehicle:</strong><br>
+                From SM Batangas City, ride a jeepney or van bound for Pinamucan, Batangas City. Inform the driver to drop you off near the coastal area locally known as Pito Galera.</p>
                 
-                <p><strong>Best Time to Visit:</strong><br>
-                The dry season from November to May offers the best weather conditions for beach activities and photography.</p>
+                <div class="travel-tips">
+                    <h3>Travel Tips</h3>
+                    <ul>
+                        <li><strong>Best Time to Visit:</strong> March – May for clearer skies, calm seas, and ideal weather</li>
+                        <li><strong>Best Time of Day:</strong> Morning or late afternoon for cooler temperatures and fewer crowds</li>
+                        <li><strong>What to Bring:</strong> Sunscreen, reusable water bottles, snacks, extra clothes, and your camera</li>
+                        <li><strong>Stay Hydrated:</strong> The coastal area can get hot during midday</li>
+                        <li><strong>Be a Responsible Traveler:</strong> Use eco-friendly items, avoid single-use plastics, and respect local traditions</li>
+                        <li><strong>Ask for Directions:</strong> Locals are friendly and happy to help guide you</li>
+                        <li><strong>Capture the Moment:</strong> Sunrise and sunset are the best times for photos</li>
+                    </ul>
+                </div>
             </div>
-            <div class="map-placeholder">
-                📍
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.6942383381036!2d121.043696!3d13.718988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzA4LjQiTiAxMjHCsDAyJzM3LjMiRQ!5e0!3m2!1sen!2sph!4v1640000000000!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section id="heritage" class="heritage">
+        <div class="heritage-container">
+            <h2>A Living Heritage</h2>
+            <p>Pito Galera is not just a place to visit—it's a reflection of a community that thrives by the sea, where unity, resilience, and care for the environment continue to shape its identity.</p>
+            
+            <div class="heritage-grid">
+                <div class="heritage-card">
+                    <h3>People of the Coast</h3>
+                    <p>The residents of Pito Galera are known for their warm hospitality and deep respect for nature. Many families have lived along the coast for generations, relying on fishing, small trade, and community cooperation as part of everyday life.</p>
+                </div>
+                <div class="heritage-card">
+                    <h3>Traditions and Local Identity</h3>
+                    <p>Simple gatherings by the shore, shared meals, and faith-based celebrations bring the community together. The beach serves not only as a destination but as a place for connection, reflection, and cultural pride.</p>
+                </div>
+                <div class="heritage-card">
+                    <h3>Environmental Stewardship</h3>
+                    <p>Barangay Pinamucan encourages everyone to protect the area through:</p>
+                    <ul>
+                        <li>Regular Coastal Clean-ups led by local youth and volunteers</li>
+                        <li>Information Drives promoting eco-friendly tourism practices</li>
+                        <li>Community Watch Programs that help maintain cleanliness and safety</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -669,16 +769,17 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>Email: visit@pitogalera.com</p>
-                <p>Phone: +63 912 345 6789</p>
+                <p>Phone: +43 7245 435</p>
+                <p>Email: ptcao@batangas.gov.ph</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
+                <a href="#features">Features</a>
                 <a href="#experiences">Experiences</a>
-                <a href="#gallery">Gallery</a>
                 <a href="#visit">Visit</a>
+                <a href="#heritage">Heritage</a>
             </div>
         </div>
         <div class="copyright">
@@ -725,7 +826,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.experience-card, .about-content, .gallery-item, .accommodation-card').forEach(el => {
+        document.querySelectorAll('.experience-card, .about-content, .feature-card, .heritage-card').forEach(el => {
             observer.observe(el);
         });
     </script>
